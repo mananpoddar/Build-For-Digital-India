@@ -11,7 +11,7 @@ app_name = "backend"
 urlpatterns =[
     
     path('admin/', admin.site.urls),
-    # path('auth/', AuthAPI.as_view()),
-    # path('getAadharDetails/', GetAadharAPI.as_view()),
+    path('getRecords/', RetrieveRecordAPI.as_view()),
+    path('postRecords/', EnterRecordAPI.as_view()),
     url(r'',index, name='home'),
 ]

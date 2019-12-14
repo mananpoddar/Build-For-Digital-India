@@ -38,7 +38,7 @@ class Records(models.Model):
     id = models.IntegerField(primary_key=True)
     doctor_id = models.ForeignKey(DoctorDetails, on_delete=models.CASCADE)
     patient_id = models.ForeignKey(PatientDetails, on_delete=models.CASCADE)
-    timeStamp = models.IntegerField()
+    timeStamp = models.CharField(max_length=50)
     date = models.DateField()
     summary = models.TextField(max_length=2550)
 
@@ -46,10 +46,10 @@ class Chat(models.Model):
     id = models.IntegerField(primary_key=True)
     doctor_id = models.ForeignKey(DoctorDetails, on_delete=models.CASCADE)
     patient_id = models.ForeignKey(PatientDetails, on_delete=models.CASCADE)
-    timeStamp = models.IntegerField()
+    timeStamp = models.CharField(max_length=50)
     date = models.DateField()
     doctors_message = models.TextField(max_length=255)
     patient_message = models.TextField(max_length=255)
-    timestamp_message  = models.IntegerField()
+    timestamp_message  = models.CharField(max_length=50)
     def __str__(self):
         return self.id
